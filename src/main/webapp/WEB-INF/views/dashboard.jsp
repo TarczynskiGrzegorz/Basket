@@ -2,21 +2,15 @@
   Created by IntelliJ IDEA.
   User: gtarczynski
   Date: 08.06.2024
-  Time: 00:03
+  Time: 00:44
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Home</title>
+    <title>Title</title>
 </head>
 <body>
-start
-<a href="/login">
-    Sign in
-</a>
-<a href="/registry">
-    Sign up
-</a>
+dashboard  lallala
 </body>
 </html>
