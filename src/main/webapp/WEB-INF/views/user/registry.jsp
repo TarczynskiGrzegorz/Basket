@@ -24,6 +24,5 @@
     </label>
     <input type="submit" value="Save">
 </form:form>
-${empty exists ? "user not exists - ok " : "user exists ! - change username"}
 </body>
 </html>
