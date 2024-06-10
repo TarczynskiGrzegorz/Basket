@@ -24,5 +24,8 @@ dashboard  lallala
 <a href="/product/add">
     Add Products
 </a>
+<a href="/dish/add">
+    Add Dish
+</a>
 </body>
 </html>

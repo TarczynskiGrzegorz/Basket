@@ -23,4 +23,12 @@ public class User {
                     inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
     //gettery, settery
-}    
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                '}';
+    }
+}
