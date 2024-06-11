@@ -31,6 +31,8 @@ public class Dish {
     @OneToMany(cascade = CascadeType.REMOVE)
     private List<Ingredient> ingredients = new ArrayList<>();
 
+
+
     public void addIngredient(Ingredient ingredient) {
         ingredients.add(ingredient);
     }

@@ -36,8 +36,13 @@ dashboard  lallala
 </c:if>
 <c:forEach items="${receipt.dishes}" var="d">
     ${d.name}<br>
+    ${d}<br>
+    ${d.name}<br>
+    ${d.ingredients}<br>
+    ${d.user}<br>
+
     <c:forEach items="${d.ingredients}" var="i">
-        <c:out value=" ${i.product.name}"/> <c:out value="- ${i.amount}"/> <c:out value=" ${i.product.unit.measure}"/>
+        <c:out value="${i.product.name}"/> <c:out value="${i.amount}"/> <c:out value="${i.product.unit.measure}"/><br>
     </c:forEach>
 </c:forEach>
 <a href="/receipt/addDish">
