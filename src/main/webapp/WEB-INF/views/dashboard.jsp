@@ -27,5 +27,21 @@ dashboard  lallala
 <a href="/dish/add">
     Add Dish
 </a>
+
+<c:if test="${empty receipt}">
+    no order
+    <a href="/receipt/create">
+        Create order
+    </a>
+</c:if>
+<c:forEach items="${receipt.dishes}" var="d">
+    ${d.name}<br>
+    <c:forEach items="${d.ingredients}" var="i">
+        <c:out value=" ${i.product.name}"/> <c:out value="- ${i.amount}"/> <c:out value=" ${i.product.unit.measure}"/>
+    </c:forEach>
+</c:forEach>
+<a href="/receipt/addDish">
+    Add dish to order
+</a>
 </body>
 </html>

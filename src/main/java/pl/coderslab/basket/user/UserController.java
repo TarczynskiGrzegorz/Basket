@@ -2,11 +2,15 @@ package pl.coderslab.basket.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.coderslab.basket.user.User;
 import pl.coderslab.basket.user.UserService;
+
+import javax.validation.Valid;
 
 @Controller
 public class UserController {
@@ -33,10 +37,11 @@ public class UserController {
     }
 
     @PostMapping("/registry")
-    public String createUser(User user,Model model) {
+    public String createUser(@Valid User user, BindingResult result, Model model) {
         if (userRepository.findByUsername(user.getUsername()) != null) {
+            result.addError(new FieldError("user","username","This user exists"));
 //            model.addAttribute("exists",true);
-            return "redirect:registry";
+            return "user/registry";
         }
         userService.saveUser(user);
         return "redirect:login";

@@ -16,6 +16,8 @@
 <body>
 <p>rejestracja</p>
 <form:form method="post" modelAttribute="user">
+    <form:errors path="username"/>
+
     <label>
         Username: <form:input path="username"/>
     </label>

@@ -25,5 +25,9 @@
 <c:forEach items="${ingredients}" var ="i">
     <c:out value=" ${i.product.name}"/> <c:out value="- ${i.amount}"/> <c:out value=" ${i.product.unit.measure}"/>
 </c:forEach>
+
+<a href="/dashboard">
+    Save dish
+</a>
 </body>
 </html>
