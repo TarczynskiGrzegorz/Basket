@@ -13,7 +13,8 @@
     <title>Title</title>
 </head>
 <body>
-dashboard  lallala
+
+
 <form action="<c:url value="/logout"/>" method="post">
     <input class="fa fa-id-badge" type="submit" value="Sign out">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -36,15 +37,28 @@ dashboard  lallala
 </c:if>
 <c:forEach items="${receipt.dishes}" var="d">
     ${d.name}<br>
-    ${d}<br>
-    ${d.name}<br>
-    ${d.ingredients}<br>
-    ${d.user}<br>
-
     <c:forEach items="${d.ingredients}" var="i">
         <c:out value="${i.product.name}"/> <c:out value="${i.amount}"/> <c:out value="${i.product.unit.measure}"/><br>
     </c:forEach>
 </c:forEach>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <c:forEach var="entry" items="${list}">
+            <tr>
+                <td><c:out value="${entry.key}"/></td>
+                <td><c:out value="${entry.value}"/></td>
+            </tr>
+        </c:forEach>
+    </tbody>
+</table>
 <a href="/receipt/addDish">
     Add dish to order
 </a>

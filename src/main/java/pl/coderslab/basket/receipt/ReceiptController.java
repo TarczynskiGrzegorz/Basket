@@ -12,7 +12,9 @@ import pl.coderslab.basket.unit.Unit;
 import pl.coderslab.basket.user.User;
 import pl.coderslab.basket.user.UserRepository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ReceiptController {
@@ -30,6 +32,12 @@ public class ReceiptController {
     public String displayOrder(@AuthenticationPrincipal UserDetails user, Model model) {
         Receipt receipt = receiptRepository.findReceiptByUser(userRepository.findByUsername(user.getUsername()));
         model.addAttribute("receipt", receipt);
+        Map<String,Integer> list = new HashMap<>();
+        if(receipt!=null){
+            list = receipt.getProductList();
+        }
+        model.addAttribute("list",list);
+
         return "/dashboard";
     }
 
