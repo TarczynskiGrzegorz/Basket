@@ -11,24 +11,23 @@
 <%@ include file="header.jsp"%>
 
 
-<form action="<c:url value="/logout"/>" method="post">
-    <input class="fa fa-id-badge" type="submit" value="Sign out">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-</form>
-<a href="/product/get">
-    Show Products
-</a>
-<a href="/product/add">
-    Add Products
-</a>
-<a href="/dish/add">
-    Add Dish
-</a>
+<%--<form action="<c:url value="/logout"/>" method="post">--%>
+<%--    <input class="fa fa-id-badge" type="submit" value="Sign out">--%>
+<%--    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
+<%--</form>--%>
+<%--<a href="/product/get">--%>
+<%--    Show Products--%>
+<%--</a>--%>
+<%--<a href="/product/add">--%>
+<%--    Add Products--%>
+<%--</a>--%>
+<%--<a href="/dish/add">--%>
+<%--    Add Dish--%>
+<%--</a>--%>
 
 <c:if test="${empty receipt}">
-    no order
-    <a href="/receipt/create">
-        Create order
+    <a class="btn btn-danger" href="/receipt/create">
+        No existing order - Create order
     </a>
 </c:if>
 <div class="container-fluid">
@@ -81,7 +80,7 @@
     </div>
 </div>
 
-<a href="/receipt/addDish">
-    Add dish to order
-</a>
+<%--<a href="/receipt/addDish">--%>
+<%--    Add dish to order--%>
+<%--</a>--%>
 <%@ include file="footer.jsp"%>
